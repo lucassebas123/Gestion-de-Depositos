@@ -2,7 +2,7 @@
 // ======================================================================
 // API: OBTENER LISTA DE USUARIOS (ADMIN)
 // ======================================================================
-// v1.0 - Creado por [Asistente] para la Mejora #2 (Carga AJAX)
+
 declare(strict_types=1);
 
 // 1. Cargar el verificador de ADMIN
@@ -34,4 +34,5 @@ try {
     http_response_code(500);
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
+
 }
