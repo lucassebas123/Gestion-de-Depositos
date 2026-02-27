@@ -2,9 +2,7 @@
 // ======================================================================
 // API: OBTENER INSUMOS POR DEPÓSITO - IMPLEMENTACIÓN COMPLETA
 // ======================================================================
-// Requiere: src/auth_check.php (valida sesión y expone $pdo)
-//           src/funciones_db.php (helper: obtener_insumos_para_deposito_asignado)
-// MODIFICADO v1.1 - [Asistente] Añadido 'sku' para el escáner
+
 declare(strict_types=1);
 
 require_once __DIR__ . '/src/auth_check.php';
