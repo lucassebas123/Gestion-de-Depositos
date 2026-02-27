@@ -1,13 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE MAESTROS (Depósitos, Categorías, Proveedores)
- * VERSIÓN FINAL COMPLETA - MODIFICADA
- * - Incluye: Auditoría de Bajas y Altas (quién y cuándo).
- * - Incluye: Filtros exclusivos para inactivos.
- * - Incluye: CRUD completo de Proveedores.
- * - CORRECCIÓN: Operadores y Observadores ven TODOS los depósitos activos.
- */
-
 // ======================================================================
 // 2. FUNCIONES DE DEPÓSITOS
 // ======================================================================
@@ -253,4 +244,5 @@ function activar_proveedor_logico($pdo, $id) {
         return [false, "Error al activar proveedor."];
     }
 }
+
 ?>
