@@ -3,8 +3,6 @@
  * ======================================================================
  * API: OBTENER STOCK DE UN ITEM ESPECÍFICO
  * ======================================================================
- * v1.1 - [Asistente] Añadido log de auditoría en la tabla
- * 'auditoria_consultas_stock'.
  */
 declare(strict_types=1);
 
@@ -68,4 +66,5 @@ try {
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
 }
+
 ?>
