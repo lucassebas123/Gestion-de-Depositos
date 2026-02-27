@@ -2,7 +2,7 @@
 // ======================================================================
 // API: ACCIONES DE MOVIMIENTOS
 // ======================================================================
-// v1.0 - Creado para eliminar movimientos programados
+//Creado para eliminar movimientos programados
 declare(strict_types=1);
 
 // 1. Seguridad: Solo Supervisores y Admins
@@ -53,4 +53,5 @@ try {
     http_response_code(500);
     echo json_encode(['exito' => false, 'mensaje' => 'Error del servidor.']);
 }
+
 ?>
