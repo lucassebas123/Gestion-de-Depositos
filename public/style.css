@@ -1,0 +1,416 @@
+/* =============================================
+   SISTEMA DE DISEÑO - VERSIÓN FINAL LIGHT (ROBUSTA)
+   ============================================= */
+
+:root {
+    /* 1. PALETA DE MARCA */
+    --brand-primary: #4A55A2; 
+    --brand-light: #C5DFF8;
+    --brand-dark: #2c3653; 
+
+    /* 2. NEUTROS */
+    --text-dark: #1F2937; 
+    --text-light: #6B7280; 
+    --bg-light: #F9FAFB;   
+    --border-color: #E5E7EB; 
+
+    /* 3. SEMÁNTICA */
+    --success: #10B981; 
+    --danger: #EF4444;  
+    --warning: #F59E0B; 
+
+    /* 4. LAYOUT */
+    --bs-body-font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    --sidebar-width: 280px;
+    --navbar-height: 64px;
+    
+    /* 5. BORDES */
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-lg: 1rem;
+    --bs-border-radius-sm: 0.5rem;
+}
+
+/* ESTILO GLOBAL DEL BODY */
+body { 
+    font-family: var(--bs-body-font-family); 
+    background-color: var(--bg-light); 
+    color: var(--text-dark); 
+}
+
+/* ============================================= */
+/* 1. ESTILOS PARA EL LOGIN (MANTENIDOS EXACTOS) */
+/* ============================================= */
+.login-page-body {
+    background: url('login_background.jpg') no-repeat center center fixed !important;
+    background-size: cover !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.login-page-body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+    z-index: 0;
+}
+
+.glass-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 1.5rem;
+    padding: 3rem 2rem;
+    width: 100%;
+    max-width: 420px;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.glass-card h3 { color: #fff; font-weight: 700; letter-spacing: -0.5px; }
+.glass-card p { color: rgba(255, 255, 255, 0.7); }
+
+.glass-card .form-floating > .form-control {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 0.75rem;
+}
+.glass-card .form-floating > .form-control:focus {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 4px rgba(74, 85, 162, 0.25);
+    color: #fff;
+}
+.glass-card .form-floating > label { color: rgba(255, 255, 255, 0.6); }
+.glass-card .form-floating > .form-control:focus ~ label,
+.glass-card .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-login-premium {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #6a75ca 100%);
+    border: none;
+    padding: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 85, 162, 0.4);
+}
+.btn-login-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 85, 162, 0.5);
+    background: linear-gradient(135deg, #3A4488 0%, var(--brand-primary) 100%);
+}
+
+/* ============================================= */
+/* 2. LAYOUT PRINCIPAL (Sidebar & Navbar)        */
+/* ============================================= */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-width);
+    z-index: 1020;
+    background-color: var(--brand-dark); 
+    color: #fff;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.05);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Habilitar scroll si el menú es muy largo */
+    overflow-y: auto;
+}
+
+/* Scrollbar sutil para el sidebar */
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.2); border-radius: 10px; }
+
+.content-wrapper {
+    margin-left: var(--sidebar-width);
+    padding: 0; 
+    width: calc(100% - var(--sidebar-width));
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin 0.3s ease;
+}
+
+.main-navbar {
+    height: var(--navbar-height);
+    background-color: #fff; 
+    border-bottom: 1px solid var(--border-color); 
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    z-index: 900;
+    position: sticky;
+    top: 0;
+}
+
+.page-content-container {
+    padding: 1.5rem; 
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ============================================= */
+/* 3. TIPOGRAFÍA Y COMPONENTES                   */
+/* ============================================= */
+.sidebar-brand { 
+    font-size: 1.6rem; font-weight: 700; padding: 1.5rem 0.5rem; 
+    color: #f1f5f9; text-align: center; letter-spacing: 0.5px; 
+}
+.card-header, h1, h2, h3, h4, h5, h6 { font-weight: 600; }
+
+.form-control, .form-select {
+    min-height: calc(2.8rem + 2px); 
+    padding: 0.6rem 0.75rem;
+    border-color: var(--border-color);
+    background-color: #fff;
+    color: var(--text-dark);
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 0.25rem rgba(74, 85, 162, 0.25); 
+}
+.input-group .btn { min-height: calc(2.8rem + 2px); }
+.btn-sm { border-radius: 0.5rem; }
+.badge { padding: 0.4em 0.7em; font-size: 0.85rem; }
+
+/* Menú Sidebar */
+.sidebar .nav-link {
+    font-size: 0.95rem; padding: 0.75rem 1rem; color: #adb5bd;
+    border-radius: var(--bs-border-radius); margin-bottom: 0.25rem;
+    position: relative; border-left: 4px solid transparent;
+}
+.sidebar .nav-link:hover { background-color: rgba(255, 255, 255, 0.05); color: #fff; }
+.sidebar .nav-link.active { 
+    background-color: rgba(255, 255, 255, 0.1) !important; color: #fff; font-weight: 600; 
+    border-left: 4px solid var(--brand-light); padding-left: 1rem; 
+}
+.sidebar .dropdown-menu { background-color: #495057; border: none; }
+.sidebar .dropdown-item { color: #adb5bd; padding: 0.5rem 1.5rem 0.5rem 2.5rem; }
+.sidebar .dropdown-item:hover, .sidebar .dropdown-item.active { background-color: var(--brand-primary); color: #fff; }
+.sidebar hr { border-color: rgba(255, 255, 255, 0.1); }
+
+/* Tarjetas */
+.card {
+    border: 1px solid var(--border-color); 
+    background-color: #fff;
+    border-radius: var(--bs-border-radius-lg); 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    transition: box-shadow 0.2s ease-out, transform 0.2s ease-out; 
+    /* IMPORTANTE: Permite que los dropdowns salgan de la tarjeta */
+    overflow: visible !important; 
+}
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+    transform: translateY(-2px); 
+}
+.card-header {
+    background-color: #fff; border-bottom: 1px solid var(--border-color); padding: 1rem 1.5rem;
+}
+
+/* Métricas Dashboard */
+.card-metric {
+    border: 1px solid var(--border-color); border-left: 5px solid;
+    transition: all 0.2s ease-out; background-color: #fff; 
+}
+.card-metric:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+}
+.card-metric-danger { border-left-color: var(--danger); }
+.card-metric-primary { border-left-color: var(--brand-primary); }
+.card-metric-success { border-left-color: var(--success); }
+
+/* Tablas */
+.table { --bs-table-bg: transparent; }
+.table thead.table-dark th, .table thead.table-light th { 
+    background-color: var(--bg-light); color: var(--text-dark); 
+    border-bottom: 2px solid var(--border-color); 
+    padding: 0.75rem; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px;
+}
+.table-hover tbody tr:hover {
+    background-color: #fff !important; transform: scale(1.002);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); z-index: 10; position: relative;
+}
+
+/* Overlay y Responsive */
+.sidebar-overlay {
+    position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1010; opacity: 0; visibility: hidden; 
+    transition: all 0.15s ease-in-out;
+}
+.sidebar-overlay.sidebar-overlay-show { opacity: 1; visibility: visible; }
+
+@media (max-width: 991.98px) {
+    .sidebar { left: calc(-1 * var(--sidebar-width)); }
+    .sidebar.sidebar-show { left: 0; box-shadow: 0 0 25px rgba(0,0,0,0.2); }
+    .content-wrapper { margin-left: 0; width: 100%; }
+    .page-content-container { padding: 1rem; }
+    .main-navbar { padding: 0 1rem; }
+}
+
+/* Botones y Badges */
+.btn-primary { background-color: var(--brand-primary); border-color: var(--brand-primary); font-weight: 500; }
+.btn-primary:hover { background-color: #3A4488; border-color: #3A4488; }
+.btn-secondary { background-color: #fff; border-color: var(--border-color); color: var(--text-dark); font-weight: 500; }
+.btn-secondary:hover { background-color: var(--bg-light); }
+.badge-maestro {
+    background-color: var(--brand-light); color: var(--brand-primary) !important; 
+    border: 1px solid rgba(74, 85, 162, 0.3); padding: 0.6em 0.8em; 
+    border-radius: var(--bs-border-radius); font-weight: 500;
+}
+.empty-state-icon { font-size: 4rem; color: var(--border-color); }
+
+/* Inputs de archivo */
+.form-control[type="file"]::file-selector-button {
+    background-color: var(--brand-primary); color: #fff; border: none;
+    padding: 0.6rem 0.75rem; margin: -0.6rem 0.75rem -0.6rem -0.75rem; cursor: pointer;
+}
+
+/* ============================================= */
+/* 4. FIXES CRÍTICOS (Buscador & Menús)          */
+/* ============================================= */
+
+/* -------------------------------------------
+   A. BUSCADOR SPOTLIGHT (CAJA SÓLIDA CORREGIDA)
+------------------------------------------- */
+
+/* Fondo oscuro desenfocado detrás */
+.modal-backdrop.show {
+    opacity: 0.85 !important;
+    backdrop-filter: blur(6px);
+    background-color: #0f172a; 
+}
+
+/* La caja principal del buscador: Sólida y Unificada */
+.search-modal .modal-content {
+    background-color: #ffffff !important; /* Blanco sólido */
+    border: none;
+    border-radius: 1rem; /* Bordes redondeados modernos */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* Sombra profunda para destacar */
+    overflow: hidden; /* Asegura que el contenido respete los bordes */
+}
+
+/* Header donde va el Input */
+.search-modal .modal-header {
+    border-bottom: 1px solid var(--border);
+    padding: 0; /* Sin padding para que el input llene el espacio */
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+/* El campo de texto (Input) */
+.search-modal .search-input {
+    border: none;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+    height: auto; /* Asegurar altura correcta */
+}
+
+/* Cuerpo de resultados */
+.search-modal .modal-body {
+    background: #fff;
+    padding: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+/* Footer (Atajos Enter/Esc) */
+.search-modal .modal-footer {
+    background-color: #f9fafb; /* Gris muy suave para diferenciar */
+    border-top: 1px solid var(--border);
+    padding: 0.8rem 1.5rem;
+}
+
+/* Items de la lista de resultados */
+.search-modal .list-group-item {
+    border: none;
+    border-bottom: 1px solid #f3f4f6;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.2s;
+}
+.search-modal .list-group-item:hover {
+    background-color: #f3f4f6;
+    border-left-color: var(--brand-primary);
+}
+
+/* Encabezados de categoría dentro de la búsqueda */
+.search-category-header {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    background-color: #f9fafb;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Botón disparador en Navbar (Mantenido) */
+.btn-search-trigger {
+    background-color: var(--bg-body); 
+    border: 1px solid var(--border); 
+    color: var(--text-muted);
+    border-radius: 0.5rem; 
+    padding: 0.4rem 0.8rem; 
+    min-width: 200px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+.kbd-shortcut {
+    font-size: 0.7rem; 
+    background-color: rgba(0,0,0,0.05); 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-weight: bold;
+}
+
+/* B. FIX PARA TOM SELECT (Menús cortados) */
+/* Eleva el dropdown por encima de cualquier tarjeta */
+.ts-dropdown, 
+.ts-wrapper .ts-dropdown {
+    z-index: 99999 !important; 
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+    border-radius: 0.5rem !important;
+}
+
+/* Estilo del dropdown activo */
+.ts-dropdown .active {
+    background-color: var(--brand-light) !important;
+    color: var(--brand-primary) !important;
+}
+/* Estilo del input (caja) de TomSelect */
+.ts-control {
+    border-radius: var(--bs-border-radius);
+    padding: 0.6rem 0.75rem;
+    border-color: var(--border-color);
+}
+/* --- FIX: Espaciado y textos largos en submenús --- */
+.sidebar .dropdown-item { 
+    color: #e2e8f0;
+    /* Permite que el texto baje a la siguiente línea si es largo */
+    white-space: normal; 
+    /* Ajusta la altura automáticamente */
+    height: auto; 
+    /* Reduce un poco el padding derecho para dar más espacio al texto */
+    padding: 0.6rem 1rem 0.6rem 2.5rem; 
+    /* Mejor espaciado entre líneas */
+    line-height: 1.3; 
+}
