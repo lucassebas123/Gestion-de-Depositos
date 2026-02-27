@@ -1,9 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE USUARIOS
- * (Separado de funciones_db.php v5.0)
- */
-
 // ======================================================================
 // 8. FUNCIONES DE USUARIOS
 // ======================================================================
@@ -194,4 +189,5 @@ function cambiar_password_admin($pdo, $usuario_id, $nueva_password) {
         error_log("Error en cambiar_password_admin: " . $e->getMessage());
         return [false, "Error de base de datos."];
     }
+
 }
