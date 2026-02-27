@@ -1,17 +1,4 @@
 <?php
-/**
- * ======================================================================
- * INICIALIZADOR ESTÁNDAR
- * ======================================================================
- * Refactorizado v1.3 - [Asistente] Sincronización de Zona Horaria
- *
- * Propósito:
- * - Configurar el entorno (Zona horaria, Errores).
- * - Iniciar seguridad (CSRF, Sesión).
- * - Conectar a la Base de Datos.
- * - Cargar funciones globales.
- * - Cargar la interfaz (Header y Menú).
- */
 
 // 1. Configurar Zona Horaria de PHP (Ajustado a Argentina)
 date_default_timezone_set('America/Argentina/Buenos_Aires');
@@ -53,4 +40,5 @@ require_once __DIR__ . '/menu.php';
 
 // La página que incluye este archivo ahora puede empezar a dibujar
 // su contenido (usualmente dentro de <div class="content-wrapper">)
+
 ?>
