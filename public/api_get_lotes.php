@@ -2,11 +2,7 @@
 // ======================================================================
 // API: OBTENER LOTES DISPONIBLES POR INSUMO
 // ======================================================================
-// v1.0 - Creado por [Asistente] para la Mejora de Trazabilidad
-//
-// Devuelve una lista de lotes (con stock > 0) para un insumo
-// y depósito específicos, ordenados por FIFO.
-// ======================================================================
+
 declare(strict_types=1);
 
 // 1. Cargar el verificador de autenticación
@@ -50,4 +46,5 @@ try {
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
 }
+
 ?>
