@@ -2,7 +2,7 @@
 // ======================================================================
 // API: OBTENER HISTORIAL DE MOVIMIENTOS (CON FILTROS Y PAGINACIÓN)
 // ======================================================================
-// v1.0 - Creado por [Asistente] para la Mejora #2 (Carga AJAX)
+
 declare(strict_types=1);
 
 // 1. Cargar el verificador de autenticación
@@ -78,4 +78,5 @@ try {
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
 }
+
 ?>
