@@ -1,11 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE REPORTES Y GRÁFICOS
- * (Separado de funciones_db.php v5.0)
- *
- * v5.2 - [Asistente] Agregada función obtener_conteo_vencimientos_proximos para Dashboard.
- */
-
 // ======================================================================
 // 6. FUNCIONES DE DASHBOARD / REPORTES
 // ======================================================================
@@ -380,4 +373,5 @@ function obtener_total_consultas_stock(
         return 0;
     }
 }
+
 ?>
