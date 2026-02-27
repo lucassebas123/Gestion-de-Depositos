@@ -1,11 +1,4 @@
 <?php
-/**
- * ======================================================================
- * ARCHIVO DE CONEXIÓN A LA BASE DE DATOS (PDO) - VERSIÓN .ENV
- * ======================================================================
- * v2.0 - Utiliza vlucas/phpdotenv para cargar credenciales seguras.
- */
-
 // 1. Cargar el Autoloader de Composer
 // Subimos 2 niveles desde /public/src/ para encontrar /vendor/
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -51,4 +44,5 @@ function conectar_db() {
         throw new \PDOException("Error de conexión a la base de datos.");
     }
 }
+
 ?>
