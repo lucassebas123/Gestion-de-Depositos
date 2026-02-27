@@ -1,14 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE STOCK
- * (Separado de funciones_stock_mov.php v5.1)
- *
- * Contiene:
- * 1. Helpers de bajo nivel (actualizar/obtener stock)
- * 2. Consultas a la tabla 'stock' (consultar_stock_db)
- * 3. Función para obtener lotes disponibles (para salidas/traslados)
- */
-
 // ======================================================================
 // 5. FUNCIONES DE STOCK (HELPERS)
 // ======================================================================
@@ -250,4 +240,5 @@ function obtener_lotes_disponibles_por_insumo($pdo, $insumo_id, $deposito_id) {
         error_log("Error en obtener_lotes_disponibles_por_insumo: " . $e->getMessage());
         return [];
     }
+
 }
