@@ -1,17 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES AUXILIARES
- * (Separado de funciones_db.php v5.0)
- */
-
-/**
- * Gestiona la subida de un archivo de forma segura, verificando el tipo MIME real.
- *
- * @param string $input_name El nombre del <input type="file">.
- * @param string $directorio_destino La carpeta (privada) donde se guardará.
- * @param array $allowed_extensions Un array de extensiones permitidas (ej: ['jpg', 'pdf']).
- * @return array [bool $exito, string $mensaje_o_nombre_archivo]
- */
 function manejar_subida_movimiento($input_name, $directorio_destino, $allowed_extensions) {
     
     // 1. Verificar si se subió un archivo
@@ -77,4 +64,5 @@ function manejar_subida_movimiento($input_name, $directorio_destino, $allowed_ex
         error_log("Error crítico: No se pudo mover el archivo subido a '$ruta_final'.");
         return [false, "Error al mover el archivo subido al destino privado."];
     }
+
 }
