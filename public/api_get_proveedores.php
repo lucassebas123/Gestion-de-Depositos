@@ -2,7 +2,7 @@
 // ======================================================================
 // API: OBTENER LISTA DE PROVEEDORES (LÓGICA EXCLUSIVA)
 // ======================================================================
-// v1.1 - CORREGIDO: El filtro de inactivos ahora es exclusivo.
+
 declare(strict_types=1);
 
 // 1. Cargar el verificador de SUPERVISOR (y Admin)
@@ -53,4 +53,5 @@ try {
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
 }
+
 ?>
