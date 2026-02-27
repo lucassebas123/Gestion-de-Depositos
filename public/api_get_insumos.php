@@ -2,7 +2,7 @@
 // ======================================================================
 // API: OBTENER LISTA DE INSUMOS (LÓGICA EXCLUSIVA)
 // ======================================================================
-// v1.2 - CORREGIDO: El filtro de inactivos ahora es exclusivo.
+
 declare(strict_types=1);
 
 require_once __DIR__ . '/src/api_supervisor_check.php';
@@ -58,4 +58,5 @@ try {
     echo json_encode(['exito' => false, 'mensaje' => 'Error de base de datos.']);
     exit;
 }
+
 ?>
