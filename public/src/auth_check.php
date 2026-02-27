@@ -1,16 +1,4 @@
 <?php
-/**
- * ======================================================================
- * VERIFICADOR DE AUTENTICACIÓN
- * ======================================================================
- * Refactorizado v1.0
- * * - Inicia la sesión de forma segura.
- * - Requiere 'db_conexion.php'.
- * - Verifica si el usuario está logueado Y activo en la DB.
- * - Define variables globales con los datos del usuario.
- * - Redirige a 'acceso.php' si falla cualquier verificación.
- */
-
 // 1. Iniciar o reanudar la sesión de forma segura
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -78,4 +66,5 @@ try {
     header("Location: acceso.php?mensaje_error=" . $error_message);
     exit;
 }
+
 ?>
