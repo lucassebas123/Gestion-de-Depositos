@@ -2,9 +2,6 @@
 // ======================================================================
 // API: GESTIÓN DE INSUMOS (CREAR/ACTUALIZAR)
 // ======================================================================
-// v1.0 - Creado por [Asistente] como parte del refactor de API.
-// * Reemplaza a 'guardar_insumo.php' y 'actualizar_insumo.php'.
-// * Recibe FormData (POST + FILES) y devuelve JSON.
 declare(strict_types=1);
 
 // 1. Seguridad: Solo Supervisores y Admins
@@ -132,4 +129,5 @@ try {
     http_response_code(400); // Bad Request
     echo json_encode(['exito' => false, 'mensaje' => 'Error: ' . $e->getMessage()]);
 }
+
 ?>
