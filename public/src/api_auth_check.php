@@ -1,13 +1,4 @@
 <?php
-/**
- * ======================================================================
- * VERIFICADOR DE AUTENTICACIÓN (VERSIÓN PARA API)
- * ======================================================================
- * MODIFICADO v2.0 - [Asistente] Añadido Token CSRF
- * * - Inicia la sesión de forma segura.
- * - Verifica si el usuario está logueado Y activo en la DB.
- * - ¡IMPORTANTE! Si falla, devuelve un JSON en lugar de redirigir.
- */
 
 // 1. Iniciar o reanudar la sesión de forma segura
 if (session_status() === PHP_SESSION_NONE) {
@@ -104,4 +95,5 @@ try {
     
     // Detenemos el script para que no continúe
     exit;
+
 }
