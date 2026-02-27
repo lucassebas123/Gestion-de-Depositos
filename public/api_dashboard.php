@@ -2,9 +2,7 @@
 // ======================================================================
 // API: DATOS PARA GRÁFICOS DEL DASHBOARD
 // ======================================================================
-// v1.1 - CORREGIDO
-// Se reemplaza 'init.php' por 'auth_check.php' y 'funciones_db.php'
-// para evitar que la API imprima HTML (header y menu).
+
 declare(strict_types=1);
 
 // ⭐️ CAMBIO: Reemplazamos init.php por estos dos archivos ⭐️
@@ -53,4 +51,5 @@ try {
     echo json_encode(['error'=>'Error de base de datos']);
     exit;
 }
+
 ?>
