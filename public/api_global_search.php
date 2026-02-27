@@ -1,7 +1,7 @@
 <?php
 /**
  * API DE BÚSQUEDA GLOBAL (SPOTLIGHT)
- * Versión: 5.3 - FIX: Restricción estricta para Operadores (Solo ven Insumos)
+ FIX: Restricción estricta para Operadores (Solo ven Insumos)
  */
 
 ob_start();
@@ -158,4 +158,5 @@ try {
 } catch (Throwable $e) {
     echo json_encode([['title' => 'Error', 'category' => 'Sistema', 'icon' => 'bi-bug', 'url' => '#']]);
 }
+
 ?>
