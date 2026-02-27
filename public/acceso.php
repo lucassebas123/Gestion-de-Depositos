@@ -2,7 +2,6 @@
 // ======================================================================
 // ACCESO (LOGIN) - CON PROTECCIÓN BRUTE FORCE
 // ======================================================================
-// v2.2 - CORREGIDO: Sincronización de Hora Local para bloqueo efectivo
 
 session_start();
 
@@ -152,4 +151,5 @@ require __DIR__ . '/src/header.php';
 
 <?php 
 require __DIR__ . '/src/footer.php'; 
+
 ?>
