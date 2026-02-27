@@ -1,8 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE EMAIL
- * Utiliza PHPMailer para envíos SMTP seguros.
- */
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -52,4 +48,5 @@ function enviar_email($destinatario, $nombre_destinatario, $asunto, $cuerpoHTML)
         return [false, "No se pudo enviar el correo. Error: {$mail->ErrorInfo}"];
     }
 }
+
 ?>
