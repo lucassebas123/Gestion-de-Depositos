@@ -1,16 +1,4 @@
 <?php
-/**
- * ======================================================================
- * INICIALIZADOR DE ADMINISTRADOR
- * ======================================================================
- * Refactorizado v1.0
- * * Este archivo se usa en páginas que SON SÓLO PARA ADMINS
- * (ej: gestion_usuarios.php, reglas.php).
- * * Se encarga de:
- * 1. Cargar TODO lo de 'init.php' (Sesión, DB, Funciones, Header, Menú).
- * 2. Realizar una verificación de ROL.
- * 3. Si no es admin, lo redirige a la página de inicio.
- */
 
 // 1. Cargar el inicializador estándar
 // Esto ya nos da $pdo, $USUARIO_ROL, $USUARIO_ID, etc.
@@ -25,4 +13,5 @@ if ($USUARIO_ROL !== 'admin') {
 }
 
 // Si el script continúa, significa que el usuario ES admin.
+
 ?>
