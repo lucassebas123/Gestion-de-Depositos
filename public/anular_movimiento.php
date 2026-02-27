@@ -2,7 +2,6 @@
 // ======================================================================
 // ANULAR MOVIMIENTO (PÁGINA DE CONFIRMACIÓN)
 // ======================================================================
-// MODIFICADO v1.3 - Ahora permite acceso a 'supervisor'
 
 // 1. Cargar SOLO Auth y Funciones (SIN HTML)
 require_once 'src/auth_check.php';
@@ -147,4 +146,5 @@ require_once 'src/menu.php';   // Carga <nav>
 </div> </div> <?php 
 // 5. Cargar el footer
 require 'src/footer.php'; 
+
 ?>
