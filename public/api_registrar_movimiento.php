@@ -3,8 +3,6 @@
  * ======================================================================
  * API: REGISTRAR MOVIMIENTO (Backend)
  * ======================================================================
- * v1.1 - Procesa el formulario de movimientos.php
- * - Incluye validación de coherencia (Reglas de Negocio)
  */
 declare(strict_types=1);
 
@@ -108,4 +106,5 @@ try {
     http_response_code(400); 
     echo json_encode(['exito' => false, 'mensaje' => $e->getMessage()]);
 }
+
 ?>
