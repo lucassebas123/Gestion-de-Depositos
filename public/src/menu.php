@@ -1,12 +1,4 @@
 <?php
-/**
- * ======================================================================
- * MENÚ DE NAVEGACIÓN (SIDEBAR)
- * ======================================================================
- * MODIFICADO v3.5 - [Asistente] Oculta menús de acción para rol 'observador'
- * MODIFICADO v3.6 - [Asistente] Añadido 'Reporte Agrupado'
- * MODIFICADO v3.7 - [Asistente] Añadido 'Reporte de Auditoría'
- */
 
 // Detectar la página actual para marcarla como 'active'
 $pagina_actual = basename($_SERVER['PHP_SELF']);
@@ -175,4 +167,5 @@ $es_pagina_config_supervisor = in_array($pagina_actual, $paginas_config_supervis
         
     </ul>
     
+
 </nav>
