@@ -1,17 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE MOVIMIENTOS (COMANDOS)
- * (Separado de funciones_movimientos.php v5.2)
- *
- * Contiene:
- * 1. registrar_movimiento_db
- * 2. registrar_traslado_db
- * 3. anular_movimiento_db
- * 4. eliminar_movimiento_programado_db
- *
- * Depende de: src/db/funciones_stock.php (para los helpers)
- */
-
 // ======================================================================
 // 5C. FUNCIONES DE REGISTRO DE MOVIMIENTOS
 // ======================================================================
@@ -502,4 +489,5 @@ function eliminar_movimiento_programado_db($pdo, $movimiento_id, $usuario_rol) {
         error_log("Error en eliminar_movimiento_programado_db: " . $e->getMessage());
         return [false, "Error de base de datos. La transacción fue revertida."];
     }
+
 }
