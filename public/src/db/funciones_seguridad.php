@@ -1,9 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE SEGURIDAD (CORREGIDO)
- * Control de intentos de login y bloqueos.
- */
-
 // Configuración
 define('MAX_INTENTOS_LOGIN', 5);
 define('MINUTOS_BLOQUEO', 15);
@@ -66,4 +61,5 @@ function limpiar_intentos_ip($pdo, $ip) {
         error_log("Error al limpiar intentos: " . $e->getMessage());
     }
 }
+
 ?>
