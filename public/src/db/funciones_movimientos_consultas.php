@@ -1,14 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE MOVIMIENTOS (CONSULTAS)
- * (Separado de funciones_movimientos.php v5.2)
- *
- * Contiene:
- * 1. obtener_historial_movimientos_db
- * 2. obtener_total_movimientos
- * 3. obtener_movimiento_detalle_db
- */
-
 // ======================================================================
 // 5D. FUNCIONES DE CONSULTA DE MOVIMIENTOS (VISTA: historial_movimientos.php)
 // ======================================================================
@@ -220,4 +210,5 @@ function obtener_movimiento_detalle_db($pdo, $movimiento_id) {
         error_log("Error en obtener_movimiento_detalle_db: " . $e->getMessage());
         return null;
     }
+
 }
