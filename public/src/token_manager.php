@@ -3,8 +3,6 @@
  * ======================================================================
  * GESTOR DE TOKENS CSRF
  * ======================================================================
- * v1.0 - Creado por [Asistente]
- *
  * Funciones para generar, obtener y validar el token CSRF.
  */
 
@@ -48,4 +46,5 @@ function validar_token_csrf($token_enviado) {
     
     // Usar hash_equals() para prevención de ataques de temporización
     return $token_sesion && hash_equals($token_sesion, $token_enviado);
+
 }
