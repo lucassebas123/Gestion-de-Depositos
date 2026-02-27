@@ -2,7 +2,7 @@
 // ======================================================================
 // API: GESTIÓN DE PROVEEDORES
 // ======================================================================
-// v1.1 - [Asistente] Añadida lógica de activar/desactivar
+// Añadida lógica de activar/desactivar
 
 declare(strict_types=1);
 
@@ -105,4 +105,5 @@ try {
     http_response_code(500);
     echo json_encode(['exito'=>false, 'mensaje'=>'Error del servidor.']);
 }
+
 ?>
