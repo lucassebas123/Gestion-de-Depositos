@@ -1,15 +1,4 @@
 <?php
-/**
- * MÓDULO: PROCESADOR DE MOVIMIENTOS
- * (Separado de funciones_stock_mov.php v5.1)
- *
- * Contiene:
- * 1. La lógica del 'cron' (procesar_movimientos_programados)
- *
- * Depende de: 
- * - src/db/funciones_stock.php (para helpers)
- */
-
 // ======================================================================
 // 12. PROCESADOR DE MOVIMIENTOS PROGRAMADOS
 // ======================================================================
@@ -101,4 +90,5 @@ function procesar_movimientos_programados($pdo) {
         error_log("Error en procesar_movimientos_programados: " . $e->getMessage());
         return [false, 0];
     }
+
 }
