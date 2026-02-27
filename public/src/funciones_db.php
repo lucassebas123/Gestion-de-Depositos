@@ -1,14 +1,4 @@
 <?php
-/**
- * ======================================================================
- * ARCHIVO DE FUNCIONES DE BASE DE DATOS (CARGADOR)
- * ======================================================================
- * v5.2 (Refactorizado por Asistente)
- *
- * - functions_movimientos.php se ha dividido en 2 archivos:
- * 1. funciones_movimientos_comandos.php (Escritura)
- * 2. funciones_movimientos_consultas.php (Lectura)
- */
 
 // 1. Funciones Auxiliares (Subidas de archivos, etc.)
 require_once __DIR__ . '/db/funciones_auxiliares.php';
@@ -47,4 +37,5 @@ require_once __DIR__ . '/db/funciones_reglas.php';
 require_once __DIR__ . '/db/funciones_seguridad.php';
 
 // 9. Funciones de Email
+
 require_once __DIR__ . '/db/funciones_email.php';
