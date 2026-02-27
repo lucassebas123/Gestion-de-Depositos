@@ -1,10 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE INSUMOS
- * (Separado de funciones_db.php v5.0)
- * MODIFICADO v5.1 - Agregado filtro por categoría en listados
- */
-
 // ======================================================================
 // 4. FUNCIONES DE INSUMOS
 // ======================================================================
@@ -257,4 +251,5 @@ function obtener_movimiento_por_id($pdo, $movimiento_id) {
         return null;
     }
 }
+
 ?>
