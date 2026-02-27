@@ -1,9 +1,4 @@
 <?php
-/**
- * MÓDULO: FUNCIONES DE REGLAS (PERMISOS)
- * (Separado de funciones_db.php v5.0)
- */
-
 // ======================================================================
 // 7. FUNCIONES DE REGLAS (CATEGORÍA <-> DEPÓSITO)
 // ======================================================================
@@ -185,4 +180,5 @@ function quitar_link_deposito_a_usuario($pdo, $usuario_id, $deposito_id) {
         error_log("Error en quitar_link_deposito_a_usuario: " . $e->getMessage());
         return [false, "Error de base de datos al quitar regla."];
     }
+
 }
